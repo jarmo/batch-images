@@ -17,7 +17,6 @@ ImageMagick's `identify` and `convert` binaries are required to perform the resi
 
 ```
 ./resize.sh 1024 input.jpg
-
 ./resize.sh 512 input-1.jpg input-2.jpg input-dir/
 ```
 
@@ -29,7 +28,6 @@ ImageMagick's `convert` binary is required to perform the conversion.
 
 ```
 ./convert.sh webp input.jpg
-
 ./convert.sh png input-1.jpg input-2.jpg input-dir/
 ```
 
@@ -42,6 +40,5 @@ You can get an API key from the Tinify web service.
 
 ```
 ./tinify.sh input.jpg
-
 ./tinify.sh input-1.jpg input-2.jpg input-dir/
 ```
