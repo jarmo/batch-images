@@ -4,15 +4,15 @@ set -Eeo pipefail
 
 MAX_WIDTH="$1"
 shift || true
-IMAGE_PATHS="$@"
+IMAGE_PATHS=("$@")
 
-if [[ -z "$MAX_WIDTH" || -z "$IMAGE_PATHS" ]]; then 
-  echo "Usage: "$0" MAX_WIDTH IMAGE..."
+if [[ -z "$MAX_WIDTH" || -z "${IMAGE_PATHS[0]}" ]]; then 
+  echo "Usage: $0 MAX_WIDTH IMAGE..."
   exit 1
 fi
 
-for IMAGE_PATH in ${IMAGE_PATHS[@]}; do
-  for IMAGE in $(find "$IMAGE_PATH" -name "*.jpg" -o -name "*.png" -o -name "*.webp"); do
+for IMAGE_PATH in "${IMAGE_PATHS[@]}"; do
+  find "$IMAGE_PATH" \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) -print0 | while IFS= read -r -d '' IMAGE; do
     echo
     echo "Processing $IMAGE"
 
