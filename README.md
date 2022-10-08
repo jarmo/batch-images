@@ -42,3 +42,7 @@ You can get an API key from the Tinify web service.
 ./tinify.sh input.jpg
 ./tinify.sh input-1.jpg input-2.jpg input-dir/
 ```
+
+## Testing
+
+Run `make test` to run `shellcheck` against all the scripts in this directory.
