@@ -12,7 +12,7 @@ if [[ -z "$IMAGE_OUTPUT_FORMAT" || -z "${IMAGE_PATHS[0]}" ]]; then
 fi
 
 for IMAGE_PATH in "${IMAGE_PATHS[@]}"; do
-  find "$IMAGE_PATH" -print0 -name "*.jpg" -o -name "*.png" -o -name "*.webp" | while IFS= read -r -d '' IMAGE; do
+  find "$IMAGE_PATH" \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) -print0 | while IFS= read -r -d '' IMAGE; do
     echo
     echo "Processing $IMAGE"
 
